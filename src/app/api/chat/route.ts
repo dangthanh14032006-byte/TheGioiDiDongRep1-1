@@ -56,38 +56,46 @@ export async function POST(req: NextRequest) {
 
     const apiKey = process.env.GEMINI_API_KEY;
 
-    // 2. Nếu có GEMINI_API_KEY: Gọi trực tiếp Google Gemini API
+    // 2. Nếu có GEMINI_API_KEY: Gọi Google Gemini API với danh sách mô hình dự phòng
     if (apiKey) {
-      try {
-        const genAI = new GoogleGenerativeAI(apiKey);
-        const model = genAI.getGenerativeModel({
-          model: 'gemini-1.5-flash',
-          systemInstruction: SYSTEM_INSTRUCTION,
-        });
+      const genAI = new GoogleGenerativeAI(apiKey);
+      const candidateModels = [
+        'gemini-3.5-flash-lite',
+        'gemini-3.6-flash',
+        'gemini-3-flash-preview',
+        'gemini-3.5-flash'
+      ];
 
-        // Tạo context lịch sử hội thoại nếu có
-        const formattedHistory = Array.isArray(history)
-          ? history.slice(-6).map((item: any) => ({
-              role: item.role === 'user' ? 'user' : 'model',
-              parts: [{ text: item.content || '' }],
-            }))
-          : [];
+      const formattedHistory = Array.isArray(history)
+        ? history.slice(-6).map((item: any) => ({
+            role: item.role === 'user' ? 'user' : 'model',
+            parts: [{ text: item.content || '' }],
+          }))
+        : [];
 
-        const chat = model.startChat({
-          history: formattedHistory,
-          generationConfig: {
-            temperature: 0.7,
-            maxOutputTokens: 600,
-          },
-        });
+      for (const modelName of candidateModels) {
+        try {
+          const model = genAI.getGenerativeModel({
+            model: modelName,
+            systemInstruction: SYSTEM_INSTRUCTION,
+          });
 
-        const result = await chat.sendMessage(message);
-        const text = result.response.text();
+          const chat = model.startChat({
+            history: formattedHistory,
+            generationConfig: {
+              temperature: 0.7,
+              maxOutputTokens: 600,
+            },
+          });
 
-        return NextResponse.json({ reply: text });
-      } catch (geminiError: any) {
-        console.error('Lỗi gọi Gemini API:', geminiError?.message);
-        // Fallback sang phản hồi cục bộ nếu API key lỗi hoặc hết quota
+          const result = await chat.sendMessage(message);
+          const text = result.response.text();
+          if (text) {
+            return NextResponse.json({ reply: text });
+          }
+        } catch (geminiError: any) {
+          console.warn(`Model ${modelName} gặp sự cố, thử model tiếp theo:`, geminiError?.message?.slice(0, 100));
+        }
       }
     }
 
