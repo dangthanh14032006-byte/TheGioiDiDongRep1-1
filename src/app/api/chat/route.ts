@@ -66,12 +66,39 @@ export async function POST(req: NextRequest) {
         'gemini-3.5-flash'
       ];
 
-      const formattedHistory = Array.isArray(history)
-        ? history.slice(-6).map((item: any) => ({
+      // Xử lý lịch sử hội thoại chuẩn hóa theo đặc tả của Gemini API:
+      // Bắt buộc tin nhắn đầu tiên trong history phải là role 'user', và không được 2 tin nhắn cùng role liên tiếp
+      let formattedHistory: Array<{ role: 'user' | 'model'; parts: { text: string }[] }> = [];
+      if (Array.isArray(history)) {
+        const rawHistory = history
+          .filter((item: any) => item && typeof item.content === 'string' && item.content.trim())
+          .map((item: any) => ({
             role: item.role === 'user' ? 'user' : 'model',
-            parts: [{ text: item.content || '' }],
-          }))
-        : [];
+            parts: [{ text: item.content.trim() }],
+          }));
+
+        // Tìm vị trí tin nhắn 'user' đầu tiên (bỏ qua tin chào ban đầu của bot)
+        const firstUserIdx = rawHistory.findIndex((h) => h.role === 'user');
+        if (firstUserIdx !== -1) {
+          const sliceFromUser = rawHistory.slice(firstUserIdx);
+          // Đảm bảo không trùng role liên tiếp
+          for (const item of sliceFromUser) {
+            const last = formattedHistory[formattedHistory.length - 1];
+            if (!last || last.role !== item.role) {
+              formattedHistory.push(item as any);
+            }
+          }
+        }
+      }
+
+      // Giới hạn 6 lượt trao đổi gần nhất để phản hồi nhanh và giữ đúng ngữ cảnh
+      if (formattedHistory.length > 6) {
+        // Cắt bớt nhưng vẫn phải đảm bảo tin nhắn đầu tiên có role là 'user'
+        formattedHistory = formattedHistory.slice(-6);
+        if (formattedHistory[0]?.role === 'model') {
+          formattedHistory.shift();
+        }
+      }
 
       for (const modelName of candidateModels) {
         try {
