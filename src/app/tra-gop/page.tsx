@@ -80,7 +80,7 @@ export default function InstallmentPage() {
               </div>
             </div>
             <p className="text-xs text-gray-500">
-              Nhân viên thẩm định hồ sơ của Thế Giới Di Động sẽ gọi điện thoại tới số <span className="font-bold text-black">{phone}</span> trong vòng 10 phút để xác nhận.
+              Nhân viên thẩm định hồ sơ của KikiMobile sẽ gọi điện thoại tới số <span className="font-bold text-black">{phone}</span> trong vòng 10 phút để xác nhận.
             </p>
           </div>
         ) : (

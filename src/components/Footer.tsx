@@ -84,7 +84,7 @@ export default function Footer() {
         <div>
           <h4 className="font-bold text-gray-900 mb-3 text-sm">Hệ thống phân hệ</h4>
           <p className="text-gray-500 mb-3">
-            Hệ thống website thương mại điện tử chuyên nghiệp mô phỏng mô hình Thegioididong.com.
+            Hệ thống thương mại điện tử thiết bị công nghệ KikiMobile (kikimobile.com).
           </p>
           <div className="flex flex-col gap-2">
             <Link 
@@ -98,7 +98,7 @@ export default function Footer() {
       </div>
 
       <div className="bg-gray-100 py-4 text-center text-gray-500 text-[11px] border-t border-gray-200">
-        © 2026 thegioididong Clone Platform. Dự án thực hành hệ thống thương mại điện tử đa phân hệ.
+        © 2026 KikiMobile (kikimobile.com). Hệ thống bán lẻ điện thoại, laptop, phụ kiện chính hãng.
       </div>
     </footer>
   );

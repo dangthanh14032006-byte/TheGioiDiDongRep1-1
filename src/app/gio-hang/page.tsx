@@ -134,7 +134,7 @@ export default function CartPage() {
               <div className="md:col-span-5 bg-gradient-to-b from-yellow-50 to-orange-50 border border-yellow-300 rounded-2xl p-5 text-center space-y-3">
                 <div className="bg-white p-3 rounded-xl border border-gray-200 shadow-inner inline-block">
                   <img
-                    src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=vietqr_thegioididong_${orderCode}_${totalPrice}`}
+                    src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=vietqr_kikimobile_${orderCode}_${totalPrice}`}
                     alt="VietQR Payment Code"
                     className="w-48 h-48 mx-auto object-contain"
                   />
@@ -264,7 +264,7 @@ export default function CartPage() {
             </div>
             <h2 className="text-2xl font-black text-gray-900">ĐẶT HÀNG THÀNH CÔNG!</h2>
             <p className="text-sm text-gray-600">
-              Cảm ơn <span className="font-bold">{customerName}</span> đã mua hàng tại thegioididong!
+              Cảm ơn <span className="font-bold">{customerName}</span> đã mua hàng tại KikiMobile!
             </p>
             <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 max-w-md mx-auto text-left text-xs space-y-2">
               <div className="flex justify-between">

@@ -182,7 +182,7 @@ export default function TrackingPage() {
                   </div>
 
                   <div className="bg-yellow-50 rounded-lg p-3 text-xs text-yellow-800">
-                    💡 Khách hàng chỉ cần mang máy đến bất kỳ siêu thị Thegioididong nào trên toàn quốc, nhân viên sẽ tiếp nhận bảo hành qua số IMEI này mà không cần mang theo hóa đơn giấy.
+                    💡 Khách hàng chỉ cần mang máy đến bất kỳ cửa hàng KikiMobile nào trên toàn quốc, nhân viên sẽ tiếp nhận bảo hành qua số IMEI này mà không cần mang theo hóa đơn giấy.
                   </div>
                 </div>
               )

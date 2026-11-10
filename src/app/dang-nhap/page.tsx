@@ -132,7 +132,7 @@ export default function CustomerLoginPage() {
             <p className="text-xs text-gray-500">
               {step === 'PHONE' && 'Nhập số điện thoại để tiếp tục mua sắm & tích điểm'}
               {step === 'OTP' && `Nhập mã 6 chữ số đã gửi về ${phone}`}
-              {step === 'INFO' && 'Nhận ngay 100 điểm thưởng hội viên Thế Giới Di Động'}
+              {step === 'INFO' && 'Nhận ngay 100 điểm thưởng hội viên KikiMobile'}
             </p>
           </div>
 
@@ -177,7 +177,7 @@ export default function CustomerLoginPage() {
               </button>
 
               <div className="text-[11px] text-gray-400 text-center">
-                Bằng việc tiếp tục, bạn đồng ý với Điều khoản sử dụng và Chính sách bảo mật của Thế Giới Di Động.
+                Bằng việc tiếp tục, bạn đồng ý với Điều khoản sử dụng và Chính sách bảo mật của KikiMobile.
               </div>
             </form>
           )}

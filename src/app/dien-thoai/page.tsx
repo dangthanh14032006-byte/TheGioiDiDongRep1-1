@@ -212,7 +212,7 @@ function CategoryContent() {
           </div>
           <div className="hidden sm:block text-right">
             <span className="bg-black text-[#ffd400] text-xs font-black px-3 py-1.5 rounded-lg uppercase">
-              Thế Giới Di Động
+              KikiMobile
             </span>
           </div>
         </div>

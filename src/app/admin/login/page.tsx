@@ -7,7 +7,7 @@ import { ShieldCheck, Lock, Mail, ArrowRight, Eye, EyeOff, AlertCircle } from 'l
 
 export default function AdminLoginPage() {
   const router = useRouter();
-  const [email, setEmail] = useState('admin@thegioididong.com');
+  const [email, setEmail] = useState('admin@kikimobile.com');
   const [password, setPassword] = useState('admin123');
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
@@ -38,10 +38,10 @@ export default function AdminLoginPage() {
 
   const handleQuickFill = (role: 'admin' | 'staff') => {
     if (role === 'admin') {
-      setEmail('admin@thegioididong.com');
+      setEmail('admin@kikimobile.com');
       setPassword('admin123');
     } else {
-      setEmail('kho.tphcm@thegioididong.com');
+      setEmail('kho.tphcm@kikimobile.com');
       setPassword('kho123');
     }
   };
@@ -49,13 +49,13 @@ export default function AdminLoginPage() {
   return (
     <div className="min-h-screen bg-[#14181d] flex flex-col items-center justify-center p-4">
       <div className="max-w-md w-full bg-[#1e232a] border border-gray-800 rounded-2xl shadow-2xl p-8 space-y-6">
-        {/* Logo Quản trị TGDD */}
+        {/* Logo Quản trị KikiMobile */}
         <div className="text-center space-y-2">
           <div className="w-14 h-14 bg-[#ffd400] text-black rounded-2xl mx-auto flex items-center justify-center font-black text-2xl shadow-lg">
             ⚡
           </div>
           <h1 className="text-xl font-black text-white tracking-tight">
-            TGDD ADMIN PORTAL
+            KIKIMOBILE ADMIN PORTAL
           </h1>
           <p className="text-xs text-gray-400">
             Cổng đăng nhập dành riêng cho Quản trị viên & Nhân viên hệ thống
@@ -79,7 +79,7 @@ export default function AdminLoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="admin@thegioididong.com"
+                placeholder="admin@kikimobile.com"
                 className="w-full bg-[#14181d] border border-gray-700 text-white rounded-xl pl-9 pr-3 py-2.5 focus:outline-none focus:border-[#ffd400] transition"
               />
             </div>

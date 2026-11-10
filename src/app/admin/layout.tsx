@@ -35,10 +35,10 @@ export default function AdminLayout({
         try {
           setAdminUser(JSON.parse(session));
         } catch {
-          setAdminUser({ name: 'Super Admin', role: 'SUPER_ADMIN', email: 'admin@thegioididong.com' });
+          setAdminUser({ name: 'Super Admin', role: 'SUPER_ADMIN', email: 'admin@kikimobile.com' });
         }
       } else {
-        setAdminUser({ name: 'Super Admin', role: 'SUPER_ADMIN', email: 'admin@thegioididong.com' });
+        setAdminUser({ name: 'Super Admin', role: 'SUPER_ADMIN', email: 'admin@kikimobile.com' });
       }
     }
   }, [isLoginPage]);
@@ -73,7 +73,7 @@ export default function AdminLayout({
                 ⚡
               </span>
               <div>
-                <div className="font-extrabold text-sm text-[#ffd400] leading-none">TGDD ADMIN</div>
+                <div className="font-extrabold text-sm text-[#ffd400] leading-none">KIKIMOBILE ADMIN</div>
                 <div className="text-[10px] text-gray-400">Hệ Thống Quản Trị Chuỗi</div>
               </div>
             </Link>

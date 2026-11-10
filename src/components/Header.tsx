@@ -129,14 +129,14 @@ export default function Header() {
       {/* Main Yellow Header */}
       <div className="bg-[#ffd400] text-black px-4 py-2.5">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-          {/* Logo Thế Giới Di Động */}
+          {/* Logo KikiMobile */}
           <Link href="/" className="flex items-center gap-2 flex-shrink-0">
             <div className="bg-black text-[#ffd400] w-9 h-9 rounded-full flex items-center justify-center font-black text-xl shadow-inner">
               ⚡
             </div>
             <div className="flex flex-col leading-tight">
               <span className="font-extrabold text-lg sm:text-xl tracking-tight text-black">
-                thegioididong<span className="text-[#d0021b]">.com</span>
+                kikimobile<span className="text-[#d0021b]">.com</span>
               </span>
               <span className="text-[10px] font-semibold text-gray-800 -mt-1">
                 Điện thoại • Laptop • Phụ kiện chính hãng

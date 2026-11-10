@@ -35,7 +35,7 @@ export default function ChatbotWidget() {
     {
       id: 'msg-welcome',
       sender: 'bot',
-      text: 'Dạ, em chào Anh/Chị! Em là Trợ lý AI của Thế Giới Di Động. Em có thể hỗ trợ Anh/Chị tìm mẫu Điện thoại, Laptop phù hợp ngân sách, hướng dẫn Mua Trả Góp 0% hoặc tra cứu bảo hành máy. Anh/Chị đang quan tâm đến sản phẩm nào ạ?',
+      text: 'Dạ, em chào Anh/Chị! Em là Trợ lý AI của KikiMobile. Em có thể hỗ trợ Anh/Chị tìm mẫu Điện thoại, Laptop phù hợp ngân sách, hướng dẫn Mua Trả Góp 0% hoặc tra cứu bảo hành máy. Anh/Chị đang quan tâm đến sản phẩm nào ạ?',
       timestamp: 'Vừa xong',
     },
   ]);
@@ -124,7 +124,7 @@ export default function ChatbotWidget() {
           </div>
           <div className="text-left leading-tight">
             <div className="text-[11px] font-extrabold text-[#ffd400] flex items-center gap-1">
-              <Sparkles className="w-3 h-3" /> TRỢ LÝ AI TGDD
+              <Sparkles className="w-3 h-3" /> TRỢ LÝ AI KIKIMOBILE
             </div>
             <div className="text-[10px] text-gray-300 font-semibold">Tư vấn chọn máy 24/7</div>
           </div>
@@ -145,7 +145,7 @@ export default function ChatbotWidget() {
               </div>
               <div>
                 <h3 className="font-extrabold text-xs text-white flex items-center gap-1.5">
-                  <span>TGDD SMART AI ASSISTANT</span>
+                  <span>KIKIMOBILE AI ASSISTANT</span>
                   <span className="bg-[#ffd400] text-black text-[9px] font-black px-1.5 py-0.2 rounded">Gemini</span>
                 </h3>
                 <p className="text-[10px] text-gray-400">Trợ lý tư vấn sản phẩm & trả góp chính hãng</p>
@@ -169,7 +169,7 @@ export default function ChatbotWidget() {
             <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-2 text-[10px] text-yellow-800 flex items-start gap-1.5">
               <ShieldAlert className="w-3.5 h-3.5 text-yellow-600 flex-shrink-0 mt-0.5" />
               <span>
-                Trợ lý AI chỉ tư vấn sản phẩm, giá bán, khuyến mãi và trả góp tại Thế Giới Di Động. Không hỗ trợ mật khẩu hoặc thông tin quản trị.
+                Trợ lý AI chỉ tư vấn sản phẩm, giá bán, khuyến mãi và trả góp tại KikiMobile. Không hỗ trợ mật khẩu hoặc thông tin quản trị.
               </span>
             </div>
 
