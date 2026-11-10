@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import ChatbotWidget from '@/components/ChatbotWidget';
 
 export const metadata: Metadata = {
   title: 'Thegioididong.com - Điện thoại, Laptop, Phụ kiện chính hãng',
@@ -15,6 +16,7 @@ export default function RootLayout({
     <html lang="vi">
       <body className="min-h-screen flex flex-col bg-[#f4f4f4] antialiased">
         {children}
+        <ChatbotWidget />
       </body>
     </html>
   );
